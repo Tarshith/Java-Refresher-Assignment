@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Variable Demo</title>
+</head>
+<body>
+	<h3>Click for Strict Mode</h3><hr><hr>
+	<button onclick=strictMode()>Strict Mode</button><br>
+	<h3>Click for Normal Mode</h3><hr><hr>
+	<button onclick=normalMode()>Normal Mode</button>
+	<script>
+		function strictMode(){
+			"use strict"	
+			x=2.5;
+			document.write("Strict Value is "+x);
+			}
+			function normalMode(){
+			x=2.5;
+			document.write("Normal Mode Value "+x);	
+		}
+	</script>
+</body>
+</html>

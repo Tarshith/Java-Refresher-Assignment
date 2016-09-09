@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+	<script>
+		function incrementLS(){
+			if(typeof(Storage) != "undefined"){
+				if(localStorage.localClick){
+					console.log("reached inside if(localStorage.localClick)")
+					localStorage.localClick = Number(localStorage.localClick) + 1;
+				}
+				else{
+					localStorage.localClick = 1;
+				}
+				document.getElementById("display1").innerHTML = "Clicks on Local Storage: " + (localStorage.localClick);
+				//localStorage.removeItem("localClick");
+			}
+			else{
+				document.getElementById("display3").innerHTML = "Sorry, your browser does not support web storage...";
+			}
+		}
+		
+		function incrementSS(){
+			if(typeof(Storage) != "undefined"){
+				if(sessionStorage.localClick){
+					sessionStorage.localClick = Number(sessionStorage.localClick) + 1;
+				}
+				else{
+					sessionStorage.localClick = 1;
+				}
+				document.getElementById("display2").innerHTML = "Clicks on Session Storage: " + sessionStorage.localClick;
+				//sessionStorage.removeItem("localClick");
+			}
+			else{
+				document.getElementById("display3").innerHTML = "Sorry, your browser does not support web storage...";
+			}
+		}
+	</script>
+</head>
+<html>
+	<body>
+		<button id = "loacalStorage" onclick = "incrementLS()">Local Storage</button>
+		<br>
+		<br>
+		<button id = "sessionStorage" onclick = "incrementSS()">Session Storage</button>
+		<br>
+		<p id = "display1"></p>
+		<p id = "display2"></p>
+		<p id = "display3"></p>		
+	</body>
+</html>

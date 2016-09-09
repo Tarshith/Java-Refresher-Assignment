@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<input id ="email"></input>
+	<br><br>
+	<button onclick = "validate()">Check</button>
+	<br>
+	<p id = "display"></p>
+	<script>
+	function validate(){
+		var atSymbolCount = 0, dotAfterAtCount = 0;
+		var email = document.getElementById("email").value;
+		for(var i = 0; i < email.length ; i++){
+			if(email[i] == '@'){
+				atSymbolCount++;
+				for(var k = i; k < email.length; k++){
+					if(email[k] == '.'){
+						dotAfterAtCount++;
+					}
+				}
+			}
+		}
+		try{
+			if(atSymbolCount == 1 && dotAfterAtCount == 1) throw "Success: Valid Email!"
+			else throw "Error: Invalid Email"
+		}
+		catch(err){
+			document.getElementById("display").innerHTML = err;
+		}
+	}
+	</script>
+	</body>
+</html>

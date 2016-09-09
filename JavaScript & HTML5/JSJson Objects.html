@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<p id = "display"></p>
+		<script>
+			var parkingSlot = '{"parking":[' + 			
+			'{"Row": "21","Column":"2"},' + 
+			'{"Row": "74","Column":"5"},' + 
+			'{"Row": "11","Column":"6"}]}';
+			obj = JSON.parse(parkingSlot);
+			document.getElementById("display").innerHTML = "Parking Slot at Row: " + obj.parking[1].Row + " and Column: " + obj.parking[1].Column + " is Available";			
+		</script>
+	</body>
+</html>

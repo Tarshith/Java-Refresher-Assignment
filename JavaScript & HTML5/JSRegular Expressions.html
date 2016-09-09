@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "text">Introduction to application protocols for large scale distributed systems including object request brokers, asynchronous messaging, and Web services. Lab is based on using protocols to build distributed systems. Prerequisites: Java programming or instructor consent.</p>
+		<p>Enter the word you would like to search in your entered text</p>
+		<input id = "searchWord"></input><br><br>
+		<button onclick = "find()">Find</button><br><br>
+		<p id = "display"></p>
+		<script>
+			function find(){
+				var enteredText = document.getElementById("text").innerHTML;
+				var findText = document.getElementById("searchWord").value;
+				var found = enteredText.search(findText);
+				if (found == -1){
+					document.getElementById("display").innerHTML = "Your search word not found";
+				}
+				else document.getElementById("display").innerHTML = "Found your search word at " + found + " Position";
+			}		
+		</script>
+	</body>
+</html>

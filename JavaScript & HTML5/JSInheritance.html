@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <p id = "display1"></p>
+  <p id = "display2"></p>
+  <script>
+    function laptop(ram, hdd, screen, graphic){
+	  this.ramSize = ram;
+	  this.hardDisk = hdd;
+	  this.screenSize = screen;
+	  this.graphicCard = graphic;			
+    }
+    var personalComputer = new laptop("1 GB", "1 TB", "21 inches", "4 GB");
+    document.getElementById("display1").innerHTML = "Before adding the Brand Specification Specs of the Laptop are: <br><br>RAM = " + personalComputer.ramSize + ", HDD = " + personalComputer.hardDisk + ", Screen Size = " + personalComputer.screenSize + " & Graphic Card = " + personalComputer.graphicCard;
+    personalComputer.brand = "Microsoft";
+    document.getElementById("display2").innerHTML = "After adding the Brand Specification Specs of the Laptop are: <br><br>RAM = " + personalComputer.ramSize + ", HDD = " + personalComputer.hardDisk + ", Screen Size = " + personalComputer.screenSize + ", Graphic Card = " + personalComputer.graphicCard + " & Brand = " + personalComputer.brand;	
+  </script>
+</body>
+</html>

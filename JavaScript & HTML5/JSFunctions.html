@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Enter the Number to be display'ed!</p>
+		<textarea id = "ta"></textarea>
+		<br><br>
+		<button onclick = "display()">Display it!</button>
+		<br>
+		<p id = "display"></p>
+		<script>
+			function display(){
+				var text = document.getElementById("ta").value;
+				document.getElementById("display").innerHTML = text;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Click the button to get your coordinates and Distance from Santa Cruz Beach Broadwalk in Kms.</p>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="details"></p>
+    <p id="distance"></p>
+
+    <script>
+        var x = document.getElementById("details");
+        var y = document.getElementById("distance");
+
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+            var startLatRads = (position.coords.latitude) * (Math.PI / 180);
+            var startLongRads = (position.coords.longitude) * (Math.PI / 180);
+            var destLatRads = 36.96 * (Math.PI / 180);
+            var destLongRads = -122.018 * (Math.PI / 180);
+            var Radius = 6371; // radius of the Earth in km
+            var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
+                Math.cos(startLatRads) * Math.cos(destLatRads) *
+                Math.cos(startLongRads - destLongRads)) * Radius;
+            y.innerHTML = "Distance from SJSU: " + distance + " Kms";
+        }
+    </script>
+</body>
+
+</html>

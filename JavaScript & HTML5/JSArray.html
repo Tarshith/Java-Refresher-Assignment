@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "displayBeforeEdit"></p>
+		<p id = "displayAfterEdit"></p>
+		<script>
+			var Names = ["Vishnu", "Teja", "Pernapati", "Tuttu", "Rajini", "Rama", "Ram"];
+			document.getElementById("displayBeforeEdit").innerHTML = "Before Edit:" + Names;
+			Names[0] = "Tarshith";
+			document.getElementById("displayAfterEdit").innerHTML = "After Edit: " + Names;
+			</script>
+	</body>
+</html>

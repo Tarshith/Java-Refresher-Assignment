@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Enter Your Age!</p>
+		<br>
+		<input id = "text"></input>
+		<br>
+		<button onclick = "finding()">Find Out</button>
+		<br>
+		<br>
+		<p id = "display"></p>
+		<script>
+		function finding(){	
+			var literal = document.getElementById("text").value;
+			var literalnumber = parseInt(literal);							
+			if(literalnumber < 9 || literalnumber > 0){
+				document.getElementById("display").innerHTML = "Thank you for the Information!";
+			}
+			else{
+				document.getElementById("display").innerHTML = "It's not a valid Age!";
+			}
+		}
+		</script>
+	</body>
+</html>
